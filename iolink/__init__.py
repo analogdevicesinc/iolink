@@ -1,11 +1,5 @@
-'''
-Created on 17.12.2020
 
-@author: LH, BP, ED
-'''
+from .misc import get_port
+from .port import IsduError
 
-name = "iolink"
-desc = "Python IO-link Access Package"
-
-def showInfo():
-    print(name + " - " + desc)
+__version__ = "0.0.1"
