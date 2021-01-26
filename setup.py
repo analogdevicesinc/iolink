@@ -8,7 +8,7 @@ import setuptools
 setuptools.setup(
     name='iolink',
     author='Maxim-Trinamic Software Team',
-    author_email='tmc_info@trinamic.com',
+    author_email='pypi.trinamic@maximintegrated.com',
     description='IO-Link Adapter Interface',
     long_description_content_type='text/markdown',
     url='https://github.com/trinamic/iolink',
