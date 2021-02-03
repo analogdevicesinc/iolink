@@ -26,7 +26,7 @@ class PortABC(ABC):
         pass
 
     @abstractmethod
-    def get_device_pd_input_and_status_(self) -> Tuple[bytes, int]:
+    def get_device_pd_input_and_status(self) -> Tuple[bytes, int]:
         """Gets the input process data from a device and the state information."""
         pass
 

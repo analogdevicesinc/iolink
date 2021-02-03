@@ -90,7 +90,7 @@ class IqLinkPort(PortABC):
         op_modes_str = target_state_to_op_modes_str[target_state]
         self._go_to_state(op_modes_str)
 
-    def get_device_pd_input_and_status_(self):
+    def get_device_pd_input_and_status(self):
         self._check_port()
         status = ctypes.c_uint8()
         pd_data_buffer = ctypes.create_string_buffer(64)
