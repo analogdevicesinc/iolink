@@ -46,7 +46,7 @@ class PD1243:
         self._port.set_device_pd_output(struct.pack('>llB', target_position, target_velocity, mode_byte))
 
     def get_pd_input(self):
-        pd_data_in, status = self._port.get_device_pd_input()
+        pd_data_in, status = self._port.get_device_pd_input_and_status()
         return struct.unpack('>lllB', pd_data_in)
 
     def write_isdu_parameter(self, name, value):
@@ -83,11 +83,13 @@ class PD1243:
         self.write_isdu_parameter('Custom Data Select', custom_data_select_enum[name])
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope='module')
 def pd1243(opt):
     with iolink.get_port(interface=opt['interface']) as port:
         port.change_device_state_to('Operate')
-        yield PD1243(port)
+        pd1243 = PD1243(port)
+        pd1243.write_isdu_parameter('Set Actual Position', 0)
+        yield pd1243
         # Restore factory settings
         port.write_device_isdu(0x02, 0, bytes([0x82]))
 
@@ -97,8 +99,8 @@ def test_process_data(pd1243):
     pd1243.set_pd_output(51_200, 0, 'pos')
     state_byte = 0x00
     while not state_byte & 0x2:
-        _, _, _, state_byte = pd1243.get_process_data_in()
-    pd1243.set_process_data_out(0, 0, 'stop')
+        _, _, _, state_byte = pd1243.get_pd_input()
+    pd1243.set_pd_output(0, 0, 'stop')
 
 
 def test_isdu_parameter(pd1243):
