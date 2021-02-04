@@ -6,7 +6,7 @@ IO-Link is a standardized point-to-point connection down at the edge layer of th
 The ``iolink`` Python package allows access to IO-Link devices from within Python,
 by providing a common abstraction layer to different IO-Link adapters.
 
-Note that for now, only the iqLink device is supported and only under Windows.
+Note that for now, only the iqLink® device is supported and only under Windows.
 
 Installation
 ------------

@@ -18,11 +18,11 @@ This makes sure that the ``pip`` you are using belongs to your Python distributi
 Dependencies that are required
 ------------------------------
 
-When using an iqlink
-~~~~~~~~~~~~~~~~~~~~
+When using an iqLink®
+~~~~~~~~~~~~~~~~~~~~~
 
 * Download the iqDLL (iqcomm.dll) from the `IQ2 website <https://www.iq2-development.com/downloads.html>`__.
-* Make the iqDll available to ``iolink`` by copying the iqcomm.dll file:
+* Make the iqDLL available to ``iolink`` by copying the iqcomm.dll file:
 
   * to the same directory where your main Python file resides, or by
   * copying the file to a known location in your system and adding this directory to the PATH environment variable.
