@@ -10,6 +10,7 @@ setuptools.setup(
     author='Maxim-Trinamic Software Team',
     author_email='pypi.trinamic@maximintegrated.com',
     description='IO-Link Adapter Interface',
+    long_description_content_type='text/x-rst',
     url='https://github.com/trinamic/iolink',
     packages=setuptools.find_packages(),
     include_package_data=True,
