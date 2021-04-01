@@ -14,6 +14,9 @@ setuptools.setup(
     url='https://github.com/trinamic/iolink',
     packages=setuptools.find_packages(),
     include_package_data=True,
+    project_urls={
+        'Documentation': 'https://iolink.readthedocs.io',
+    },
     classifiers=[
         'Programming Language :: Python :: 3',
         'Development Status :: 2 - Pre-Alpha',

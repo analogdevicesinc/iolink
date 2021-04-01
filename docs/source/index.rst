@@ -20,7 +20,7 @@ The following example prints the product name of a connected device, by reading 
        # change state of the connected device to "Operate"
        port.change_device_state_to('Operate')
        # read standard ISDU
-       isdu_0x12_data = port.read_device_isdu(0x12)
+       isdu_0x12_data = port.read_device_isdu(0x12, 0)
        # convert the received bytes object that's supposed
        # to be an ASCII string to a standard Python 3 string
        # and print the result
@@ -32,3 +32,7 @@ The following example prints the product name of a connected device, by reading 
 
    Installation <install.rst>
    API Documentation <api.rst>
+
+Trademarks
+----------
+IO-Link is a registered trademark of Profibus User Organization (PNO)

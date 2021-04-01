@@ -1,4 +1,8 @@
-"""Test port of an adapter with a PD42-1-1243-IOLINK"""
+"""Test an IO-Link port of against a connected PD42-1-1243-IOLINK
+
+Run this test with pytest `pytest --interface iqLink` for example.
+
+"""
 
 import iolink
 import pytest

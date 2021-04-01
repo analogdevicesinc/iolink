@@ -16,6 +16,8 @@ Use pip to install the libary.
 
     $ pip install iolink
 
+Apart from that, you need to install the `dependencies that are required <https://iolink.readthedocs.io/en/latest/install.html#dependencies-that-are-required>`_ for your adapter.
+
 Example usage
 -------------
 
@@ -30,7 +32,7 @@ This example prints the product name of a connected device, by reading out the s
        # change state of the connected device to "Operate"
        port.change_device_state_to('Operate')
        # read standard ISDU
-       isdu_0x12_data = port.read_device_isdu(0x12)
+       isdu_0x12_data = port.read_device_isdu(0x12, 0)
        # convert the received bytes object that's supposed
        # to be an ASCII string to a standard Python 3 string
        # and print the result
@@ -45,3 +47,7 @@ Pull requests are welcome. For any major changes or questions regarding implemen
 License
 -------
 iolink is licensed under the MIT License.
+
+Trademarks
+----------
+IO-Link is a registered trademark of Profibus User Organization (PNO)
