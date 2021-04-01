@@ -21,8 +21,11 @@ class PortABC(ABC):
         pass
 
     @abstractmethod
-    def change_device_state_to(self, target_state):
-        """Sends a request to the device to change the state."""
+    def change_device_state_to(self, target_state: str):
+        """Sends a request to the device to change the state.
+
+        :param str target_state: allowed strings are 'Inactive', 'PreOperate' or 'Operate'.
+        """
         pass
 
     @abstractmethod
@@ -36,15 +39,15 @@ class PortABC(ABC):
         pass
 
     @abstractmethod
-    def read_device_isdu(self, index, subindex):
+    def read_device_isdu(self, index: int, subindex: int):
         """Reads content of a parameter from the device."""
         pass
 
     @abstractmethod
-    def write_device_isdu(self, index, subindex, data):
+    def write_device_isdu(self, index: int, subindex: int, data):
         """Writes content of a parameter from the device.
 
-        Make sure
+        Make sure the size of the data matches the size of the devices parameter.
         """
         pass
 
